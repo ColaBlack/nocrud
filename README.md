@@ -37,8 +37,8 @@ java -jar no-crud.jar -h
 
 ### 项目地址
 
-- [no-crud-github](https://github.com/ColaBlack/no-crud)
-- [no-crud-gitee](https://gitee.com/ColaBlack/no-crud)
+- [no-crud-github](https://github.com/ColaBlack/nocrud)
+- [no-crud-gitee](https://gitee.com/ColaBlack/nocrud)
 
 ### 友情项目
 
@@ -51,7 +51,7 @@ gitee 仓库地址：
 github 仓库地址：
 - [SpringModel](https://github.com/ColaBlack/spring-model)
 - [VueModel](https://github.com/ColaBlack/vue-model)
-- [teaai-backend](https://github.com/ColaBlack/teaai-backend)
+- [teaai-backend](https://github.com/ColaBlack/tea_ai_backend)
 - [teaai-frontend](https://github.com/ColaBlack/teaai-frontend)
 
 说明：springModel，vueModel是从teaai前后端两个项目中抽离了部分核心代码简化得来，而本项目则是帮助大家使用springModel的辅助工具。
