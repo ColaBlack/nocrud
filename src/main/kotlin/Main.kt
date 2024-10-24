@@ -18,16 +18,16 @@ fun main() {
     {
     "user": "Big Joe",
     "latestProduct": {
-        "url": "products/greenmouse.html",
-        "name": "green mouse"
+        "url": "https://github.com/ColaBlack",
+        "name": "No CRUD"
     }
      */
     val hashMap = HashMap<String, Any>()
-    hashMap["user"] = "Big Joe"
+    hashMap["user"] = "ColaBlack"
     val latest: MutableMap<String, Any> = HashMap()
     hashMap["latestProduct"] = latest
-    latest["url"] = "products/greenmouse.html"
-    latest["name"] = "green mouse"
+    latest["url"] = "https://github.com/ColaBlack"
+    latest["name"] = "No CRUD"
     // 获取模板文件
     val template = config.getTemplate("demo.ftl")
     val out = OutputStreamWriter(File("src/main/java/edu/zafu/generated/demo.java").outputStream())

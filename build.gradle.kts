@@ -16,6 +16,8 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     // https://mvnrepository.com/artifact/org.freemarker/freemarker
     implementation("org.freemarker:freemarker:2.3.33")
+    // https://mvnrepository.com/artifact/info.picocli/picocli
+    implementation("info.picocli:picocli:4.7.6")
 }
 
 tasks.test {
