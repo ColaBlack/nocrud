@@ -1,38 +1,31 @@
-import freemarker.template.Configuration
-import freemarker.template.TemplateExceptionHandler
-import java.io.File
-import java.io.OutputStreamWriter
+import picocli.CommandLine
+import kotlin.system.exitProcess
 
-
-fun main() {
-    // 创建配置对象
-    val config = Configuration(Configuration.VERSION_2_3_33)
-    // 设置模板文件存放的目录
-    config.setDirectoryForTemplateLoading(File("src/main/resources/templates"))
-    // 设置默认的编码格式
-    config.defaultEncoding = "UTF-8"
-    // 设置异常处理器
-    config.templateExceptionHandler = TemplateExceptionHandler.RETHROW_HANDLER
-    /*
-    利用HashMap创建数据模型
-    {
-    "user": "Big Joe",
-    "latestProduct": {
-        "url": "https://github.com/ColaBlack",
-        "name": "No CRUD"
+fun main(args: Array<String>) {
+    println("欢迎使用 NO CRUD")
+    println("使用 -h 或者 --help 可以获得帮助信息")
+    val argList = args.toMutableList()    // 将args转化为可变列表
+    // 查询args中是否有参数a和h
+    if (!args.contains("-a") && !args.contains("--author")) {
+        // 如果没有参数a，则添加参数a
+        argList.add("-a")
     }
-     */
-    val hashMap = HashMap<String, Any>()
-    hashMap["user"] = "ColaBlack"
-    val latest: MutableMap<String, Any> = HashMap()
-    hashMap["latestProduct"] = latest
-    latest["url"] = "https://github.com/ColaBlack"
-    latest["name"] = "No CRUD"
-    // 获取模板文件
-    val template = config.getTemplate("demo.ftl")
-    val out = OutputStreamWriter(File("src/main/java/edu/zafu/generated/demo.java").outputStream())
-    // 输出渲染后的内容
-    template.process(hashMap, out)
-    // 关闭输出流
-    out.close()
+    if (!args.contains("-p") && !args.contains("--package")) {
+        argList.add("-p")
+    }
+    if (!args.contains("-n") && !args.contains("--name")) {
+        argList.add("-n")
+    }
+    if (!args.contains("-k") && !args.contains("--key")) {
+        argList.add("-k")
+    }
+    if (!args.contains("-u") && !args.contains("--upperKey")) {
+        argList.add("-u")
+    }
+    if (!args.contains("-0") && !args.contains("--out")) {
+        argList.add("-o")
+    }
+
+    val exitCode = CommandLine(CLI()).execute(*argList.toTypedArray())    // 执行命令
+    exitProcess(exitCode)    // 退出程序
 }
