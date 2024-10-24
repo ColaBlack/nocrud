@@ -1,3 +1,5 @@
+package cn.cola.nocrud
+
 import picocli.CommandLine.Command
 import picocli.CommandLine.Option
 
@@ -13,7 +15,8 @@ class CLI : Runnable {
         names = ["-p", "--package"],
         description = ["生成的包名"],
         arity = "0..1",
-        interactive = true
+        interactive = true,
+        echo = true
     )
     var packageName = ""
 
@@ -21,7 +24,8 @@ class CLI : Runnable {
         names = ["-k", "--key"],
         description = ["要生成的对象的英文名（小驼峰）"],
         arity = "0..1",
-        interactive = true
+        interactive = true,
+        echo = true
     )
     var key = ""
 
@@ -29,7 +33,8 @@ class CLI : Runnable {
         names = ["-u", "--upper-key"],
         description = ["要生成的对象的英文名（大驼峰）"],
         arity = "0..1",
-        interactive = true
+        interactive = true,
+        echo = true
     )
     var upperKey = ""
 
@@ -37,7 +42,8 @@ class CLI : Runnable {
         names = ["-n", "--name"],
         description = ["生成的中文对象名"],
         arity = "0..1",
-        interactive = true
+        interactive = true,
+        echo = true
     )
     var name = ""
 
@@ -45,16 +51,17 @@ class CLI : Runnable {
         names = ["-a", "--author"],
         description = ["作者"],
         arity = "0..1",
-        interactive = true
+        interactive = true,
+        echo = true
     )
     var author = ""
 
-    // 该参数在命令行中指定，索引为0，description为描述信息
     @Option(
         names = ["-o", "--out"],
         description = ["要生成的路径"],
         arity = "0..1",
-        interactive = true
+        interactive = true,
+        echo = true
     )
     var outPath = ""
 

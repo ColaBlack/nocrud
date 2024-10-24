@@ -1,3 +1,5 @@
+package cn.cola.nocrud
+
 fun getModel(
     packageName: String,
     key: String,

@@ -1,5 +1,8 @@
+import groovy.xml.dom.DOMCategory.attributes
+
 plugins {
     id("java")
+    id("com.gradleup.shadow") version "8.3.3"
     kotlin("jvm")
 }
 
@@ -18,6 +21,7 @@ dependencies {
     implementation("org.freemarker:freemarker:2.3.33")
     // https://mvnrepository.com/artifact/info.picocli/picocli
     implementation("info.picocli:picocli:4.7.6")
+//    implementation("com.gradleup.shadow:shadow-gradle-plugin:8.3.3")
 }
 
 tasks.test {
@@ -25,4 +29,16 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(21)
+}
+
+
+
+tasks {
+    shadowJar {
+        archiveBaseName.set("nocrud")
+        archiveVersion.set("")
+        manifest {
+            attributes["Main-Class"] = "cn.cola.nocrud.MainKt"
+        }
+    }
 }

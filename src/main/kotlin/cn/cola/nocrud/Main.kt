@@ -1,3 +1,5 @@
+package cn.cola.nocrud
+
 import picocli.CommandLine
 import kotlin.system.exitProcess
 

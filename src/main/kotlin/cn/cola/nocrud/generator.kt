@@ -1,3 +1,5 @@
+package cn.cola.nocrud
+
 import freemarker.template.Configuration
 import freemarker.template.TemplateExceptionHandler
 import java.io.File
@@ -7,7 +9,10 @@ fun generator(model: HashMap<String, String>, input: String, output: String, upp
     // 创建配置对象
     val config = Configuration(Configuration.VERSION_2_3_33)
     // 设置模板文件存放的目录
-    config.setDirectoryForTemplateLoading(File("src/main/resources/templates"))
+    //获取当前项目的绝对路径
+    val currentPath = System.getProperty("user.dir")
+
+    config.setDirectoryForTemplateLoading(File(currentPath))
     // 设置默认的编码格式
     config.defaultEncoding = "UTF-8"
     // 设置异常处理器
