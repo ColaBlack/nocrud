@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# 确保脚本在执行前具有执行权限
+# 你可以通过运行 'chmod +x run_java.sh' 来添加执行权限
+
+# 检查Java是否安装
+if type -p java; then
+    echo "Java已安装。"
+    _java=java
+elif [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]]; then
+    echo "使用JAVA_HOME。"
+    _java="$JAVA_HOME/bin/java"
+else
+    echo "Java未安装，请安装Java后再运行此脚本。"
+    exit 1
+fi
+
+# 运行Java程序
+$_java -jar nocrud-all.jar "$@"
