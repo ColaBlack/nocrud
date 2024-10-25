@@ -1,11 +1,13 @@
 # NO CRUD
 
-no crud是基于springModel的辅助工具，它可以帮助你快速生成一个带有基础增删改查功能的后端controller层代码。
+> no crud是基于springModel的辅助工具，它可以帮助你快速生成一个带有基础增删改查功能的后端controller层代码。
 
 ### 如何使用
 
-从release页面下载最新版本的no-crud-all.jar和模版文件controller.ftl，
-将jar包和模版文件放到同一目录下，然后在命令行中执行以下命令：
+从release页面下载最新版本的no-crud压缩包然后解压。
+有三种使用方式：
+
+- 直接运行no-crud-all.jar
 
 ```bash
 java -jar no-crud-all.jar
@@ -19,6 +21,32 @@ java -jar no-crud-all.jar -h
 
 可以获得帮助信息。
 
+- Windows环境下运行no-crud.bat
+
+直接双击运行no-crud.bat
+
+或
+
+打开命令行运行
+
+```bash
+no-crud.bat 输入可选参数
+```
+
+- Linux环境下运行no-crud
+
+先给予执行权限
+
+```bash
+chmod +x ./no-crud
+```
+
+然后运行
+
+```bash
+no-crud 输入可选参数
+```
+
 ### 注意事项
 
 - 由于各操作系统的文件系统的差异且本人只在Windows上进行了测试，所以不保证该工具在其他系统上是否可用。
@@ -26,7 +54,7 @@ java -jar no-crud-all.jar -h
 - 生成的代码中有部分TODO注释，可以根据需要进行修改。
 - 该工具的ORM框架为mybatis 和 mybatis-plus，如果需要使用其他ORM框架，请自行修改代码。
 
-### 技术栈
+### 技术选型
 
 - 模版引擎FreeMarker
 - 命令行制作器Picocli
@@ -44,12 +72,14 @@ java -jar no-crud-all.jar -h
 ### 友情项目
 
 gitee 仓库地址：
+
 - [SpringModel](https://gitee.com/colablack/spring-model)
 - [VueModel](https://gitee.com/colablack/vue-model)
 - [teaai-backend](https://gitee.com/colablack/teaai-backend)
 - [teaai-frontend](https://gitee.com/colablack/teaai-frontend)
 
 github 仓库地址：
+
 - [SpringModel](https://github.com/ColaBlack/spring-model)
 - [VueModel](https://github.com/ColaBlack/vue-model)
 - [teaai-backend](https://github.com/ColaBlack/tea_ai_backend)
